@@ -1,0 +1,112 @@
+const routes: Routes = [
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: '', component: ContentComponent,
+    canActivate: [loggedinGuard],
+    canActivateChild:[loggedinGuard],
+    children: [
+      {
+        path: '', redirectTo: 'dashboard', pathMatch: 'full'
+      },
+      {
+        path: 'dashboard', component: DashboardComponent
+      },
+      {
+        path: 'new-dashboard', component: NewDashboardComponent
+      },
+      {
+        path: 'listing-eligibility', component: ListingEligibilityComponent
+      },
+      {
+        path: 'title-listing-status', component: TitleListingStatusComponent
+      },
+      {
+        path: 'commercial-review', component: CommercialReviewComponent
+      },
+      {
+        path: 'flipkart-shipping-fee', component: FlipkartShippingFeeComponent
+      },
+      {
+        path: 'channel-eligibility', component: ChannelEligibilityComponent
+      },
+      {
+        path: 'sla-violation', component: SlaViolationComponent
+      },
+      {
+        path: 'msp-reports', component: MspReportsComponent
+      },
+      {
+        path: 'fee-master', component: FeeMasterComponent
+      },
+      {
+        path: 'turn-over-discount', component: TurnOverDiscountComponent
+      },
+      {
+        path: 'miscellaneous-cost-master', component: MiscellaneousCostMasterComponent
+      },  
+      {
+        path: 'etail-fee-waiver', component: EtailFeeWaiverComponent
+      },
+      {
+        path: 'msp-mrp-report', component: MspMrpReportComponent
+      },
+      {
+        path: 'price-intervention', component: ProceInterventionComponent
+      },
+      {
+        path: 'msp-recalculation', component: MspRecalculationComponent, 
+        // canActivate: [roleGuard], data: { roles: [1] }
+      },
+      {
+        path: 'language-master', component: LanguageMasterComponent
+      },
+      {
+        path: 'po-insertion-failures', component: PoInsertionFailuresComponent
+      },
+      {
+        path: 'flipkart-waiver', component: FlipkartWaiverComponent
+      },
+      {
+        path: 'backlog-listing', component: BacklogListingComponent
+      },
+      {
+        path: 'onix-feed', component: OnixFeedComponent
+      },
+      {
+        path: 'onix-metadata', component: OnixMetadataComponent
+      },
+      {
+        path: 'file-upload', component: FileUploadComponent
+      },
+      {
+        path: 'mrp-not-in-range', component: MrpNotInRangeComponent
+      },
+      {
+        path: 'new-title-listing-status', component: NewTitleListingStatus
+      },
+      {
+        path: 'msp-nodata', component: MspNoDataComponent
+      },
+      {
+        path: 'fictious-isbn', component: FictiousISBNComponent
+      },
+      {
+        path: 'data-not-found', component: DataNotFoundPoComponent
+      },
+      {
+        path: 'update-asin-relist', component: UpdateAsinRelistComponent
+      },
+      {
+        path: 're-calculate-msp', component: ReCalculateMSPComponent
+      },
+      {
+        path: 'ageing-failed-isbn', component: AgeingFailedIsbnComponent
+      }
+    ]
+  },
+  {
+    path: '**', redirectTo: 'login', pathMatch: 'full'
+  },
+];
