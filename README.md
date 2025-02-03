@@ -69,3 +69,31 @@ public class ArrengingNumbers {
 	}
 
 }
+
+
+
+
+
+
+public class MissingElement {
+    public static void main(String[] args) {
+        int[] arr = new int[]{1, 3, 8, 4, 9, 10};
+        int n = arr.length;
+
+        for (int i = 1; i <= n; i++) {
+            boolean found = false;
+
+            for (int j = 0; j < n; j++) {
+                if (arr[j] == i) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                System.out.println("Missing Element: " + i);
+            }
+        }
+    }
+}
+
